@@ -1,31 +1,32 @@
 {
-  "name": "@sebastienrousseau/eslint-config",
-  "version": "0.0.1",
-  "description": "ESLint Configuration Files and rules",
-  "keywords": [
-    "eslint"
-  ],
-  "author": "Sebastien Rousseau <sebastienrousseau@users.noreply.github.com>",
-  "homepage": "https://crypto-service.dev",
-  "license": "ISC",
-  "main": "index.js",
-  "files": [
-    "index.js"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sebastienrousseau/crypto-service.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
-  },
-  "bugs": {
-    "url": "https://github.com/sebastienrousseau/crypto-service/issues"
-  },
-  "devDependencies": {
-    "eslint": "^8.16.0"
-  }
+    "author": "Sebastien Rousseau <sebastienrousseau@users.noreply.github.com>",
+    "bugs": {
+        "url": "https://github.com/sebastienrousseau/crypto-service/issues"
+    },
+    "dependencies": {
+        "eslint": "^8.16.0",
+        "eslint-plugin-import": "^2.26.0"
+    },
+    "description": "ESLint Configuration Files and rules",
+    "files": [
+        "index.js"
+    ],
+    "homepage": "https://crypto-service.dev",
+    "keywords": [
+        "eslint"
+    ],
+    "license": "ISC",
+    "main": "index.js",
+    "name": "@sebastienrousseau/eslint-config",
+    "publishConfig": {
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sebastienrousseau/crypto-service.git"
+    },
+    "scripts": {
+        "test": "echo \"Error: run tests from root\" && exit 1"
+    },
+    "version": "0.0.2"
 }
