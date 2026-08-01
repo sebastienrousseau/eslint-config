@@ -1,7 +1,7 @@
 <!-- SPDX-License-Identifier: ISC -->
 
 <p align="center">
-  <img src="https://cloudcdn.pro/beonux/v1/logos/beonux.svg" alt="eslint-config logo" width="128" />
+  <img src="./eslint-config.svg" alt="eslint-config logo" width="128" />
 </p>
 
 <h1 align="center">@sebastienrousseau/eslint-config</h1>
