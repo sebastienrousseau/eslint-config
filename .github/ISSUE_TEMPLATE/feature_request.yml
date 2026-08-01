@@ -1,0 +1,22 @@
+name: Feature Request
+description: Suggest an idea or rule enhancement for this configuration.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: Suggest an enhancement or new configuration rule set.
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Feature Description
+      description: Describe the proposed enhancement or new config option.
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Use Case & Rationale
+      description: Why would this rule or feature benefit project code quality?
+    validations:
+      required: true
