@@ -43,7 +43,8 @@
     "index.mjs",
     "index.cjs",
     "index.d.ts",
-    "eslint-config.svg"
+    "eslint-config.svg",
+    "LICENSE"
   ],
   "publishConfig": {
     "access": "public"
