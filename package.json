@@ -42,7 +42,8 @@
     "index.js",
     "index.mjs",
     "index.cjs",
-    "index.d.ts"
+    "index.d.ts",
+    "eslint-config.svg"
   ],
   "publishConfig": {
     "access": "public"
