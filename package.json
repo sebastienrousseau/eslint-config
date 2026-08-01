@@ -44,7 +44,8 @@
     "index.cjs",
     "index.d.ts",
     "eslint-config.svg",
-    "LICENSE"
+    "LICENSE",
+    ".editorconfig"
   ],
   "publishConfig": {
     "access": "public"
