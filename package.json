@@ -1,6 +1,6 @@
 {
   "name": "@sebastienrousseau/eslint-config",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Shareable ESLint configuration adhering to modern JS/TS and 2026 standards",
   "author": "Sebastien Rousseau <sebastienrousseau@users.noreply.github.com>",
   "license": "ISC",
