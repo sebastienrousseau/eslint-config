@@ -1,6 +1,6 @@
 {
   "name": "@sebastienrousseau/eslint-config",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Shareable ESLint configuration adhering to modern JS/TS and 2026 standards",
   "author": "Sebastien Rousseau <sebastienrousseau@users.noreply.github.com>",
   "license": "ISC",
@@ -58,6 +58,6 @@
     "eslint": ">=8.0.0"
   },
   "devDependencies": {
-    "eslint": "^9.0.0"
+    "eslint": "^10.8.0"
   }
 }
