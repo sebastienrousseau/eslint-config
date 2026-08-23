@@ -3,7 +3,7 @@
   "version": "0.0.3",
   "description": "Shareable ESLint configuration adhering to modern JS/TS and 2026 standards",
   "author": "Sebastien Rousseau <sebastienrousseau@users.noreply.github.com>",
-  "license": "ISC",
+  "license": "Apache-2.0 OR MIT",
   "homepage": "https://github.com/sebastienrousseau/eslint-config#readme",
   "repository": {
     "type": "git",
