@@ -571,13 +571,13 @@ a:hover { color: var(--accent-hover); }
 .hero-badges {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
   justify-content: center;
   align-items: center;
   margin-bottom: 1.5rem;
 }
 .hero-badges img {
-  height: 20px;
+  height: 28px;
   border-radius: 4px;
 }
 .search-btn-trigger {
