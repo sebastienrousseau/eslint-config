@@ -1,0 +1,16 @@
+site_name = "eslint-config"
+site_title = "@sebastienrousseau/eslint-config — Shareable ESLint configuration adhering to modern JS/TS and 2026 standards"
+site_description = "Shareable ESLint configuration adhering to modern JS/TS and 2026 standards"
+base_url = "https://config.sebastienrousseau.com/eslint-config"
+language = "en-GB"
+
+content_dir = "web/content"
+template_dir = "web/_layouts"
+output_dir = "public"
+
+[agents]
+agents_txt = true
+ai_plugin = true
+
+[agents.mcp]
+enabled = true
