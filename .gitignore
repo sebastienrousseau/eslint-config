@@ -128,3 +128,6 @@ coverage
 ehthumbs.db
 lib-cov
 Gemfile.lock
+
+public/
+public.build-tmp/
