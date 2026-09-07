@@ -2,7 +2,7 @@
   <div class="lu-shell masthead-in">
     <a class="brand" href="{{site_url}}">
       <img class="brand-mark" src="{{site_url}}assets/logo.svg"
-           width="28" height="28" alt="" aria-hidden="true" />
+           width="28" height="28" alt="Sebastien Rousseau {{name}} Logo" />
       <span class="brand-name">{{name}}</span>
     </a>
 
@@ -12,19 +12,23 @@
       id="nav-toggle"
       aria-expanded="false"
       aria-controls="site-nav"
-    >Menu</button>
+    >{{label_menu}}</button>
 
-    <nav class="site-nav" id="site-nav" aria-label="Main">
+    <nav class="site-nav" id="site-nav" aria-label="{{label_nav}}">
       <ul class="nav-list">
-        <li><a href="{{site_url}}">Home</a></li>
-        <li><a href="{{site_url}}installation/">Installation</a></li>
-        <li><a href="{{site_url}}usage/">Usage</a></li>
-        <li><a href="{{site_url}}mcp/">MCP</a></li>
-        <li><a href="{{site_url}}reference/">Reference</a></li>
+        <li><a href="{{site_url}}">{{nav_home}}</a></li>
+        <li><a href="{{site_url}}installation/">{{nav_install}}</a></li>
+        <li><a href="{{site_url}}usage/">{{nav_usage}}</a></li>
+        <li><a href="{{site_url}}reference/">{{nav_ref}}</a></li>
       </ul>
     </nav>
 
     <div class="masthead-tools">
+      <button class="search-btn-trigger" type="button" onclick="document.getElementById('ssg-search-btn') ? document.getElementById('ssg-search-btn').click() : null" aria-label="Search documentation">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <span class="search-btn-label">Search</span>
+        <kbd class="search-kbd">⌘K</kbd>
+      </button>
       <button class="mode-btn" type="button" id="mode-toggle">
         <span class="mode-btn-label">Theme</span>
         <span class="mode-btn-state" id="mode-state">System</span>

@@ -2,12 +2,27 @@
 {{#block "main"}}
 <section class="hero" aria-labelledby="hero-h">
   <div class="lu-shell hero-in">
-    <p class="eyebrow"><span class="eyebrow-tag">{{hero_tag}}</span> {{hero_tagline}}</p>
+    <div class="hero-badges">
+      <a href="https://www.npmjs.com/package/@sebastienrousseau/{{name}}" target="_blank" rel="noopener noreferrer">
+        <img src="https://img.shields.io/npm/v/@sebastienrousseau/{{name}}?color=brightgreen&label=npm" alt="npm package version" />
+      </a>
+      <a href="https://github.com/sebastienrousseau/{{name}}/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">
+        <img src="https://img.shields.io/badge/license-Apache--2.0%20OR%20MIT-blue" alt="Dual License Apache-2.0 or MIT" />
+      </a>
+      <a href="https://bestpractices.coreinfrastructure.org/projects/{{openssf_id}}" target="_blank" rel="noopener noreferrer">
+        <img src="https://bestpractices.coreinfrastructure.org/projects/{{openssf_id}}/badge" alt="OpenSSF Best Practices passing badge" />
+      </a>
+      <a href="https://scorecard.dev/viewer/?uri=github.com/sebastienrousseau/{{name}}" target="_blank" rel="noopener noreferrer">
+        <img src="https://api.scorecard.dev/projects/github.com/sebastienrousseau/{{name}}/badge" alt="OpenSSF Scorecard security score" />
+      </a>
+    </div>
     <h1 id="hero-h" class="hero-h">{{headline}}</h1>
     <p class="hero-lead">{{lead}}</p>
     <p class="hero-actions">
-      <a class="btn btn-primary" href="{{locale_path}}{{slug_install}}/">{{cta_primary}}</a>
-      <a class="btn btn-quiet" href="{{locale_path}}{{slug_ref}}/">{{cta_secondary}}</a>
+      <a class="btn btn-primary" href="{{site_url}}installation/">Get Started</a>
+      <a class="btn btn-quiet" href="{{site_url}}usage/">Usage Guide</a>
+      <a class="btn btn-quiet" href="https://github.com/sebastienrousseau/{{name}}" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a class="btn btn-quiet" href="https://www.npmjs.com/package/@sebastienrousseau/{{name}}" target="_blank" rel="noopener noreferrer">npm</a>
     </p>
   </div>
 </section>
@@ -48,6 +63,14 @@
   </div>
 </section>
 
+<section class="band prose-band" aria-labelledby="deep-dive-h">
+  <div class="lu-shell lu-shell-narrow">
+    <div class="prose">
+      {{!content}}
+    </div>
+  </div>
+</section>
+
 <section class="band" aria-labelledby="proof-h">
   <div class="lu-shell">
     <h2 id="proof-h" class="band-h">{{proof_h}}</h2>
@@ -67,7 +90,7 @@
       </div>
     </dl>
     <p class="band-cta">
-      <a class="btn btn-primary" href="{{locale_path}}{{slug_install}}/">{{cta_final}}</a>
+      <a class="btn btn-primary" href="{{site_url}}installation/">{{cta_final}}</a>
     </p>
   </div>
 </section>
