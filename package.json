@@ -51,8 +51,8 @@
     "access": "public"
   },
   "scripts": {
-    "test": "node --test --experimental-test-coverage --test-coverage-lines=98 --test-coverage-branches=98 --test-coverage-functions=98 tests/unit.test.js tests/integration.test.js tests/bench.test.js",
-    "test:coverage": "node --test --experimental-test-coverage --test-coverage-lines=98 --test-coverage-branches=98 --test-coverage-functions=98 tests/unit.test.js tests/integration.test.js tests/bench.test.js",
+    "test": "node --test --experimental-test-coverage --test-coverage-exclude=\"tests/**\" --test-coverage-lines=98 --test-coverage-branches=98 --test-coverage-functions=98 tests/unit.test.js tests/integration.test.js tests/bench.test.js",
+    "test:coverage": "node --test --experimental-test-coverage --test-coverage-exclude=\"tests/**\" --test-coverage-lines=98 --test-coverage-branches=98 --test-coverage-functions=98 tests/unit.test.js tests/integration.test.js tests/bench.test.js",
     "bench": "node benches/bench_load.js",
     "examples": "node examples/basic.js && node examples/advanced.js && node examples/features.js && node examples/esm.mjs",
     "docs:build": "bash scripts/build-docs.sh"
