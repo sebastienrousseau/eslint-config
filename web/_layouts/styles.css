@@ -566,3 +566,60 @@ a:hover { color: var(--accent-hover); }
   .doc-shell { display: block; }
   a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.85em; }
 }
+
+/* Search & Hero Enhancements */
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.hero-badges img {
+  height: 20px;
+  border-radius: 4px;
+}
+.search-btn-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-card, #f4f4f5);
+  border: 1px solid var(--border-color, #e4e4e7);
+  color: var(--text-color, #27272a);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: all 0.2s ease;
+}
+.search-btn-trigger:hover {
+  background: var(--bg-card-hover, #e4e4e7);
+  border-color: var(--border-color-hover, #d4d4d8);
+}
+.search-kbd {
+  background: var(--bg, #ffffff);
+  border: 1px solid var(--border-color, #d4d4d8);
+  border-radius: 3px;
+  padding: 1px 4px;
+  font-size: 0.75rem;
+  font-family: monospace;
+}
+.prose-band {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+.faq-section {
+  margin-top: 3rem;
+}
+.faq-item {
+  border-bottom: 1px solid var(--border-color, #e4e4e7);
+  padding: 1.25rem 0;
+}
+.faq-item h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+}
+
