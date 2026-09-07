@@ -1,6 +1,6 @@
 {
   "name": "@sebastienrousseau/eslint-config",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Shareable ESLint configuration adhering to modern JS/TS and 2026 standards",
   "author": "Sebastien Rousseau <sebastienrousseau@users.noreply.github.com>",
   "license": "Apache-2.0 OR MIT",
@@ -51,13 +51,16 @@
     "access": "public"
   },
   "scripts": {
-    "test": "node test/test.js",
-    "lint": "node test/test.js"
+    "test": "node --test --experimental-test-coverage --test-coverage-exclude=\"tests/**\" --test-coverage-lines=98 --test-coverage-branches=98 --test-coverage-functions=98 tests/unit.test.js tests/integration.test.js tests/bench.test.js",
+    "test:coverage": "node --test --experimental-test-coverage --test-coverage-exclude=\"tests/**\" --test-coverage-lines=98 --test-coverage-branches=98 --test-coverage-functions=98 tests/unit.test.js tests/integration.test.js tests/bench.test.js",
+    "bench": "node benches/bench_load.js",
+    "examples": "node examples/basic.js && node examples/advanced.js && node examples/features.js && node examples/esm.mjs",
+    "docs:build": "bash scripts/build-docs.sh"
   },
   "peerDependencies": {
     "eslint": ">=8.0.0"
   },
   "devDependencies": {
-    "eslint": "^10.9.1"
+    "eslint": "10.10.0"
   }
 }

@@ -1,0 +1,3 @@
+markdownlint-cli2
+codespell
+ssg>=0.0.56

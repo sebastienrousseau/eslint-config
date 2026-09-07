@@ -1,31 +1,34 @@
+<!-- SPDX-License-Identifier: Apache-2.0 OR MIT -->
+
 # Security Policy
 
 ## Supported Versions
 
-We actively maintain and provide security updates for the latest major version of this package.
-
-| Version | Supported          |
-| ------- | ------------------ |
-| 1.x     | :white_check_mark: |
-| < 1.0   | :x:                |
+| Version | Supported |
+|:--------|:---------:|
+| 0.0.x | Yes |
 
 ## Reporting a Vulnerability
 
-If you discover a potential security vulnerability, please do **NOT** open a public issue.
+Report security vulnerabilities by emailing **sebastian.rousseau@gmail.com**.
 
-Instead, please report it via one of the following methods:
-1. **GitHub Security Advisory**: Submit a private advisory at https://github.com/sebastienrousseau/eslint-config/security/advisories/new
-2. **Email**: Contact Security Maintainer at `sebastienrousseau@users.noreply.github.com`
+Do not open a public issue for security reports.
 
-### Response Timeline
+Include:
 
-- **Initial Response**: Within 24 hours.
-- **Vulnerability Assessment**: Within 48 hours.
-- **Fix & Disclosure**: Within 7 business days.
+- A description of the vulnerability.
+- Steps to reproduce.
+- Affected versions.
+- Any suggested fix (optional).
 
-## Supply Chain & Attestation
+Expect an initial response within 48 hours. A fix or mitigation plan will follow within 7 days of confirmation.
 
-All releases of this repository are:
-- Built with **SLSA Level 3 keyless provenance** via GitHub Actions.
-- Cryptographically signed with **SSH/GPG commit signing**.
-- Continuously scanned using **CodeQL** and **Dependabot**.
+## Commit Integrity
+
+All commits on the main branch are signed, and releases are signed tags. The release-signing key is published in [`KEYS.asc`](KEYS.asc):
+
+```text
+4B7F16C909C7A8EE9BED338A4F047EDF5F90F638
+```
+
+Signing key `Sebastien Rousseau <sebastian.rousseau@gmail.com>`, ed25519, signing-only, expires 2028-08-16. Verify the fingerprint out of band before trusting it.
