@@ -1,16 +1,7 @@
 <header class="masthead">
   <div class="lu-shell masthead-in">
-    <a class="brand" href="{{locale_path}}">
-      <!-- corralctl's own logo, not the theme's. What stood here was Lucid's
-           placeholder mark — a rounded square with an "L" in it — inlined
-           with a comment explaining that inlining saves a request. It did,
-           and it also meant doc.corrallib.com wore another project's initial
-           in its masthead.
-           Linked rather than inlined because logo.svg is 60 KB of path data,
-           which is not worth repeating in every page's HTML to save one
-           cached request. Decorative, because the brand name follows it as
-           text. -->
-      <img class="brand-mark" src="{{base_path}}assets/logo.svg"
+    <a class="brand" href="{{site_url}}">
+      <img class="brand-mark" src="{{site_url}}assets/logo.svg"
            width="28" height="28" alt="" aria-hidden="true" />
       <span class="brand-name">{{name}}</span>
     </a>
@@ -21,22 +12,22 @@
       id="nav-toggle"
       aria-expanded="false"
       aria-controls="site-nav"
-    >{{label_menu}}</button>
+    >Menu</button>
 
-    <nav class="site-nav" id="site-nav" aria-label="{{label_nav}}">
+    <nav class="site-nav" id="site-nav" aria-label="Main">
       <ul class="nav-list">
-        <li><a href="{{locale_path}}">{{nav_home}}</a></li>
-        <li><a href="{{locale_path}}{{slug_install}}/">{{nav_install}}</a></li>
-        <li><a href="{{locale_path}}{{slug_usage}}/">{{nav_usage}}</a></li>
-        <li><a href="{{locale_path}}{{slug_mcp}}/">{{nav_mcp}}</a></li>
-        <li><a href="{{locale_path}}{{slug_ref}}/">{{nav_ref}}</a></li>
+        <li><a href="{{site_url}}">Home</a></li>
+        <li><a href="{{site_url}}installation/">Installation</a></li>
+        <li><a href="{{site_url}}usage/">Usage</a></li>
+        <li><a href="{{site_url}}mcp/">MCP</a></li>
+        <li><a href="{{site_url}}reference/">Reference</a></li>
       </ul>
     </nav>
 
     <div class="masthead-tools">
       <button class="mode-btn" type="button" id="mode-toggle">
-        <span class="mode-btn-label">{{label_theme}}</span>
-        <span class="mode-btn-state" id="mode-state">{{label_theme_system}}</span>
+        <span class="mode-btn-label">Theme</span>
+        <span class="mode-btn-state" id="mode-state">System</span>
       </button>
     </div>
   </div>
