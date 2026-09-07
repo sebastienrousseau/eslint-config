@@ -1,12 +1,9 @@
 /**
- * Advanced usage example with custom overrides for @sebastienrousseau/eslint-config
+ * Advanced custom ESLint configuration override
  */
-const baseConfig = require("../index.cjs");
-
-const customConfig = Object.assign({}, baseConfig, {
-  _custom: true,
-  _timestamp: new Date().toISOString()
-});
-
-console.log("Custom extended configuration created:");
-console.log(customConfig._custom ? "Custom configuration active" : "Error");
+const base = require("../index.cjs");
+const custom = {
+  ...base,
+  rules: { ...base.rules, "no-console": "error" }
+};
+console.log("Custom no-console level:", custom.rules["no-console"]);
