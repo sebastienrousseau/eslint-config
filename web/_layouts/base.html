@@ -17,7 +17,7 @@
                font-src 'self';
                connect-src 'self';
                form-action 'self';
-               frame-ancestors 'none';
+               
                manifest-src 'self';"
     />
 
@@ -37,8 +37,8 @@
     <meta name="twitter:image:alt" content="{{screenshot_alt}}" />
 
     <link rel="canonical" href="{{permalink}}" />
-    <link rel="icon" href="{{base_path}}favicon.ico" sizes="any" />
-    <link rel="icon" href="{{base_path}}assets/logo.svg" type="image/svg+xml" />
+    <link rel="icon" href="{{site_url}}favicon.ico" sizes="any" />
+    <link rel="icon" href="{{site_url}}assets/logo.svg" type="image/svg+xml" />
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" content="#ffffff" />
 
@@ -67,8 +67,8 @@
     }
     </script>
 
-    <link rel="stylesheet" href="{{base_path}}styles.css" />
-    <script src="{{base_path}}theme-init.js"></script>
+    <link rel="stylesheet" href="{{site_url}}styles.css" />
+    <script src="{{site_url}}theme-init.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">{{label_skip}}</a>
@@ -77,6 +77,6 @@
       {{#block "main"}}{{/block}}
     </main>
     {{> footer}}
-    <script src="{{base_path}}main.js" defer></script>
+    <script src="{{site_url}}main.js" defer></script>
   </body>
 </html>
