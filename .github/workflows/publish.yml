@@ -1,31 +1,92 @@
-name: Publish to npm
+# SPDX-License-Identifier: Apache-2.0 OR MIT
+
+name: Publish Package
 
 on:
   release:
     types: [published]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (validate without publishing)'
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: read
-  id-token: write
 
 jobs:
-  publish:
-    name: Publish npm Package with SLSA Provenance
+  test:
+    name: Test & Validate
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Setup Node.js
-        uses: actions/setup-node@v7
+        uses: actions/setup-node@6044e4da6e01092eb4634033eb1a579766467d39 # v4.1.0
         with:
           node-version: 20
-          registry-url: 'https://registry.npmjs.org'
 
       - name: Run Tests
         run: npm test
 
-      - name: Publish Package
-        run: npm publish --access public --provenance
+  publish-npm:
+    name: Publish to npmjs
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Node.js for npmjs
+        uses: actions/setup-node@6044e4da6e01092eb4634033eb1a579766467d39 # v4.1.0
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Dry-run publish to npmjs
+        if: ${{ inputs.dry_run }}
+        run: npm publish --access public --dry-run --registry=https://registry.npmjs.org
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish to npmjs with SLSA provenance
+        if: ${{ !inputs.dry_run }}
+        run: npm publish --access public --provenance --registry=https://registry.npmjs.org
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish-github:
+    name: Publish to GitHub Packages
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Node.js for GitHub Packages
+        uses: actions/setup-node@6044e4da6e01092eb4634033eb1a579766467d39 # v4.1.0
+        with:
+          node-version: 20
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@sebastienrousseau'
+
+      - name: Dry-run publish to GitHub Packages
+        if: ${{ inputs.dry_run }}
+        run: npm publish --access public --dry-run --registry=https://npm.pkg.github.com
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to GitHub Packages
+        if: ${{ !inputs.dry_run }}
+        run: npm publish --access public --registry=https://npm.pkg.github.com
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
