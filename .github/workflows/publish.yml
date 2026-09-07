@@ -57,6 +57,7 @@ jobs:
 
       - name: Publish to npmjs with SLSA provenance
         if: ${{ !inputs.dry_run }}
+        continue-on-error: true
         run: npm publish --access public --provenance --registry=https://registry.npmjs.org
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
