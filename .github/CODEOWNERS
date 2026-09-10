@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: Apache-2.0 OR MIT
+#
+# Every change needs a review from the maintainer. Keeping this file present
+# and specific is also an OpenSSF Scorecard requirement.
+
+*       @sebastienrousseau
+
+# Release, packaging and supply-chain surfaces.
+/.github/        @sebastienrousseau
+/package.json    @sebastienrousseau
+/index.cjs       @sebastienrousseau
+/index.mjs       @sebastienrousseau
+/index.d.ts      @sebastienrousseau

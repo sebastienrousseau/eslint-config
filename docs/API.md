@@ -42,7 +42,7 @@ Shareable ESLint rules enforcing strict code quality, modern ES2024 idioms, and 
 - **Status**: Stable & Active
 
 ### 5. Formatting Discipline
-- **Description**: Enforces 2-space indentation, semicolons, and double quotes
+- **Description**: Correctness rules only (strict equality, mandatory braces, unused variables, use-before-define). Formatting is Prettier's responsibility.
 - **Scope**: Production & Development
 - **Status**: Stable & Active
 

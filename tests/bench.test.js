@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 Sebastien Rousseau <sebastian.rousseau@gmail.com>
+// SPDX-License-Identifier: Apache-2.0 OR MIT
+
 const { describe, it } = require("node:test");
 const assert = require("assert");
 const { runBenchmark, printBenchmark } = require("../benches/bench_load.js");
@@ -22,9 +25,12 @@ describe("@sebastienrousseau/eslint-config Benchmark Tests", () => {
   it("should execute CLI benchmark runner directly", () => {
     const { execSync } = require("child_process");
     const path = require("path");
-    const stdout = execSync(`node "${path.join(__dirname, "../benches/bench_load.js")}"`, {
-      encoding: "utf8",
-    });
+    const stdout = execSync(
+      `node "${path.join(__dirname, "../benches/bench_load.js")}"`,
+      {
+        encoding: "utf8",
+      },
+    );
     assert(stdout.includes("Benchmark: 500 loads"));
   });
 });

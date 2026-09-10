@@ -17,7 +17,7 @@
   <a href="https://scorecard.dev/viewer/?uri=github.com/sebastienrousseau/eslint-config"><img src="https://img.shields.io/ossf-scorecard/github.com/sebastienrousseau/eslint-config?style=for-the-badge&label=OpenSSF%20Scorecard&logo=openssf" alt="OpenSSF Scorecard" /></a>
   <a href="https://www.bestpractices.dev/projects/14524"><img src="https://img.shields.io/cii/level/14524?style=for-the-badge&label=OpenSSF%20Best%20Practices&logo=openssf" alt="OpenSSF Best Practices" /></a>
   <a href="LICENSE-APACHE"><img src="https://img.shields.io/badge/license-Apache--2.0%20OR%20MIT-blue.svg?style=for-the-badge" alt="License: Apache-2.0 OR MIT" /></a>
-  <a href="#minimum-toolchain-policy"><img src="https://img.shields.io/badge/node->=%2018.0.0-93450a.svg?style=for-the-badge&logo=node.js" alt="Node >= 18.0.0" /></a>
+  <a href="#minimum-toolchain-policy"><img src="https://img.shields.io/badge/node->=%2020.0.0-93450a.svg?style=for-the-badge&logo=node.js" alt="Node >= 20.0.0" /></a>
 </p>
 
 ---
@@ -84,7 +84,7 @@ make            # check + test
 
 ## Requirements
 
-- **Node.js 18.0.0 or newer.** Every package manifest declares `engines.node`, and CI enforces the runtime floor on every push across macOS, Linux, and Windows.
+- **Node.js 20.0.0 or newer.** Declared in `engines.node` and proved on every push: the CI matrix runs Node 20, 22, 24 on Linux, macOS and Windows, and fails if the matrix floor and `engines.node` disagree.
 - **npm 9.0.0 or newer** (or modern pnpm / yarn / bun).
 - **Module systems.** Full native support for ECMAScript Modules (ESM) and CommonJS (CJS).
 - **TypeScript 5.0 or newer** (optional, recommended for type checking).
@@ -93,25 +93,33 @@ make            # check + test
 
 ## Quick Start
 
-### In `package.json`
+ESLint 9+ reads a flat config from `eslint.config.js`.
 
-```json
-{
-  "eslint": "@sebastienrousseau/eslint-config"
-}
+### eslint.config.js (ESM)
+
+```js
+export { default } from "@sebastienrousseau/eslint-config";
 ```
 
-### In CommonJS Configuration
+### eslint.config.cjs (CommonJS)
 
 ```js
 module.exports = require("@sebastienrousseau/eslint-config");
 ```
 
-### In ES Module Configuration
+### Extending it
 
 ```js
-import config from "@sebastienrousseau/eslint-config";
-export default config;
+import base from "@sebastienrousseau/eslint-config";
+
+export default [
+  ...base,
+  {
+    rules: {
+      "no-console": "error",
+    },
+  },
+];
 ```
 
 ---
@@ -188,7 +196,7 @@ Full TypeScript declarations (`index.d.ts`) are included out of the box, providi
 
 ## When not to use this configuration
 
-When locked into legacy ESLint 7 environments unable to adopt modern ECMAScript standards or the Flat Config format.
+When you are still on ESLint 8 or earlier. This package is flat-config only from 0.0.7 (see [ADR 0005](./docs/adr/0005-flat-config-only.md)); stay on 0.0.4 for eslintrc support.
 
 ---
 
@@ -244,7 +252,7 @@ make test
 
 ## Minimum-toolchain policy
 
-The minimum supported Node.js version is **18.0.0**. The floor may raise only when:
+The minimum supported Node.js version is **20.0.0**. The floor may raise only when:
 
 1. An upstream LTS version reaches official End-of-Life (EOL).
 2. The reason is explicitly recorded in `CHANGELOG.md` and `DEVELOPMENT.md`.

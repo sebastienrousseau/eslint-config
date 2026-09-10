@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 Sebastien Rousseau <sebastian.rousseau@gmail.com>
+// SPDX-License-Identifier: Apache-2.0 OR MIT
+
 /**
  * Basic usage example for @sebastienrousseau/eslint-config
  * Demonstrates importing and consuming the default preset in a standard project.

@@ -1,6 +1,6 @@
 {
   "name": "@sebastienrousseau/eslint-config",
-  "version": "0.0.4",
+  "version": "0.0.7",
   "description": "Shareable ESLint configuration adhering to modern JS/TS and 2026 standards",
   "author": "Sebastien Rousseau <sebastienrousseau@users.noreply.github.com>",
   "license": "Apache-2.0 OR MIT",
@@ -31,10 +31,7 @@
     },
     "./flat": {
       "types": "./index.d.ts",
-      "import": "./index.mjs"
-    },
-    "./legacy": {
-      "types": "./index.d.ts",
+      "import": "./index.mjs",
       "require": "./index.cjs"
     }
   },
@@ -51,16 +48,27 @@
     "access": "public"
   },
   "scripts": {
-    "test": "node --test --experimental-test-coverage --test-coverage-exclude=\"tests/**\" --test-coverage-lines=98 --test-coverage-branches=98 --test-coverage-functions=98 tests/unit.test.js tests/integration.test.js tests/bench.test.js",
-    "test:coverage": "node --test --experimental-test-coverage --test-coverage-exclude=\"tests/**\" --test-coverage-lines=98 --test-coverage-branches=98 --test-coverage-functions=98 tests/unit.test.js tests/integration.test.js tests/bench.test.js",
+    "test": "node --test tests/conformance.test.js tests/bench.test.js",
     "bench": "node benches/bench_load.js",
     "examples": "node examples/basic.js && node examples/advanced.js && node examples/features.js && node examples/esm.mjs",
-    "docs:build": "bash scripts/build-docs.sh"
+    "docs:build": "bash scripts/build-docs.sh",
+    "test:conformance": "node --test tests/conformance.test.js",
+    "fuzz": "node fuzz/fuzz_config.js"
   },
   "peerDependencies": {
-    "eslint": ">=8.0.0"
+    "eslint": ">=9.0.0"
   },
   "devDependencies": {
+    "@sebastienrousseau/config-kit": "^0.0.7",
     "eslint": "10.10.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "sideEffects": false,
+  "configKit": {
+    "shape": "array",
+    "presets": [],
+    "validate": "eslint-flat"
   }
 }

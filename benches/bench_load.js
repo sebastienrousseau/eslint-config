@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 Sebastien Rousseau <sebastian.rousseau@gmail.com>
+// SPDX-License-Identifier: Apache-2.0 OR MIT
+
 /**
  * Benchmark runner for @sebastienrousseau/eslint-config
  * Measures load latency and memory consumption across CommonJS and ESM entrypoints.

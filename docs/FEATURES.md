@@ -12,7 +12,7 @@ An exhaustive overview covering **100% of the features, rules, and capabilities*
 | **Strict Equality** | Core | Active | Enforces triple-equals `eqeqeq` across all comparisons |
 | **Dead Code Prevention** | Core | Active | Disallows unused variables (`no-unused-vars`) |
 | **Console Cleanliness** | Core | Active | Disables unformatted console statements in production |
-| **Formatting Discipline** | Core | Active | Enforces 2-space indentation, semicolons, and double quotes |
+| **Correctness Rules** | Core | Active | Strict equality, mandatory braces, unused-variable and use-before-define detection |
 | **Zero Dependencies** | Packaging | Active | 0 external npm runtime dependencies |
 | **Dual Packaging** | Distribution | Active | Full CommonJS and ESM interoperability |
 | **TypeScript Types** | Typings | Active | Bundled `index.d.ts` declarations |
@@ -34,5 +34,5 @@ Disallows unused variables (`no-unused-vars`). Designed to guarantee determinist
 Disables unformatted console statements in production. Designed to guarantee deterministic behavior across all development and continuous integration environments.
 
 ### 5. Formatting Discipline
-Enforces 2-space indentation, semicolons, and double quotes. Designed to guarantee deterministic behavior across all development and continuous integration environments.
+Covers the half of linting ESLint still owns: strict equality, mandatory braces, irregular whitespace, unused variables and use-before-define. Formatting is deliberately absent — ESLint deprecated its layout rules and moved them to @stylistic, and they contradicted `@sebastienrousseau/prettier-config`. Pair this package with that one and the two compose without conflict.
 
