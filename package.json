@@ -59,7 +59,7 @@
     "eslint": ">=9.0.0"
   },
   "devDependencies": {
-    "@sebastienrousseau/config-kit": "^0.0.7",
+    "@sebastienrousseau/config-kit": "^0.0.8",
     "eslint": "10.10.0"
   },
   "engines": {

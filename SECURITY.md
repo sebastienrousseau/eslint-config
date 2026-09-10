@@ -5,12 +5,12 @@
 ## Supported Versions
 
 | Version | Supported |
-|:--------|:---------:|
-| 0.0.x | Yes |
+| :------ | :-------: |
+| 0.0.x   |    Yes    |
 
 ## Reporting a Vulnerability
 
-Report security vulnerabilities by emailing **sebastian.rousseau@gmail.com**.
+Report security vulnerabilities by emailing **<sebastian.rousseau@gmail.com>**.
 
 Do not open a public issue for security reports.
 

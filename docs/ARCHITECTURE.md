@@ -34,6 +34,6 @@ eslint-config/
 
 ## Key Invariants
 
-1. **Strict Versioning**: Releases increment strictly by `+0.0.1` following the repository lifecycle standard.
-2. **Dual Licensing**: The project is dual-licensed under Apache-2.0 OR MIT.
-3. **Commit Integrity**: Commits and release tags are signed with GPG/PGP key published in `KEYS.asc`.
+1.  **Strict Versioning**: Releases increment strictly by `+0.0.1` following the repository lifecycle standard.
+1.  **Dual Licensing**: The project is dual-licensed under Apache-2.0 OR MIT.
+1.  **Commit Integrity**: Commits and release tags are signed with GPG/PGP key published in `KEYS.asc`.
