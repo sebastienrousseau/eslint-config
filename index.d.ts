@@ -1,7 +1,7 @@
-import type { Linter } from "eslint";
+// SPDX-FileCopyrightText: 2026 Sebastien Rousseau <sebastian.rousseau@gmail.com>
+// SPDX-License-Identifier: Apache-2.0 OR MIT
 
-/**
- * Standard ESLint Flat Configuration rules object export.
- */
-declare const config: Linter.Config[];
+export type EslintConfig = ReadonlyArray<Record<string, unknown>>;
+
+declare const config: EslintConfig;
 export default config;

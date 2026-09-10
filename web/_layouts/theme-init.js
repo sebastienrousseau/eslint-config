@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 Sebastien Rousseau <sebastian.rousseau@gmail.com>
+// SPDX-License-Identifier: Apache-2.0 OR MIT
+
 /* Applied before first paint so a stored preference never flashes the wrong
  * ground. Absence of a stored value is meaningful: it means "follow the
  * system", so nothing is written to the element and the prefers-color-scheme

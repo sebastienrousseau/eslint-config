@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2026 Sebastien Rousseau <sebastian.rousseau@gmail.com>
 # SPDX-License-Identifier: Apache-2.0 OR MIT
 
 name: Publish Package
@@ -8,86 +9,23 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: 'Dry run (validate without publishing)'
+        description: 'Validate the release without publishing'
         required: false
-        default: false
+        default: true
         type: boolean
 
 permissions:
   contents: read
 
 jobs:
-  test:
-    name: Test & Validate
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-
-      - name: Setup Node.js
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
-        with:
-          node-version: 22
-
-      - name: Run Tests
-        run: npm test
-
-  publish-npm:
-    name: Publish to npmjs
-    needs: test
-    runs-on: ubuntu-latest
+  publish:
+    name: Release
+    uses: sebastienrousseau/config/.github/workflows/reusable-publish.yml@main
     permissions:
       contents: read
       id-token: write
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-
-      - name: Setup Node.js for npmjs
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
-        with:
-          node-version: 22
-          registry-url: 'https://registry.npmjs.org'
-
-      - name: Dry-run publish to npmjs
-        if: ${{ inputs.dry_run }}
-        run: npm publish --access public --dry-run --registry=https://registry.npmjs.org
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Publish to npmjs with SLSA provenance
-        if: ${{ !inputs.dry_run }}
-        continue-on-error: true
-        run: npm publish --access public --provenance --registry=https://registry.npmjs.org
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-  publish-github:
-    name: Publish to GitHub Packages
-    needs: test
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
       packages: write
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-
-      - name: Setup Node.js for GitHub Packages
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
-        with:
-          node-version: 22
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@sebastienrousseau'
-
-      - name: Dry-run publish to GitHub Packages
-        if: ${{ inputs.dry_run }}
-        run: npm publish --access public --dry-run --registry=https://npm.pkg.github.com
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Publish to GitHub Packages
-        if: ${{ !inputs.dry_run }}
-        run: npm publish --access public --registry=https://npm.pkg.github.com
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    with:
+      node-version: '20'
+      dry-run: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+    secrets: inherit

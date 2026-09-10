@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 Sebastien Rousseau <sebastian.rousseau@gmail.com>
+// SPDX-License-Identifier: Apache-2.0 OR MIT
+
 /* Progressive enhancement only. Without JavaScript the navigation is a
  * plain list and the colour scheme follows the system: nothing here is
  * required to read the documentation. */
