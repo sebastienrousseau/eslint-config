@@ -22,17 +22,22 @@ An exhaustive overview covering **100% of the features, rules, and capabilities*
 ## Feature Deep Dive
 
 ### 1. ES2024 & Node.js Environments
+
 Configured for modern ECMAScript and Node.js runtimes. Designed to guarantee deterministic behavior across all development and continuous integration environments.
 
 ### 2. Strict Equality
+
 Enforces triple-equals `eqeqeq` across all comparisons. Designed to guarantee deterministic behavior across all development and continuous integration environments.
 
 ### 3. Dead Code Prevention
+
 Disallows unused variables (`no-unused-vars`). Designed to guarantee deterministic behavior across all development and continuous integration environments.
 
 ### 4. Console Cleanliness
+
 Disables unformatted console statements in production. Designed to guarantee deterministic behavior across all development and continuous integration environments.
 
 ### 5. Formatting Discipline
+
 Covers the half of linting ESLint still owns: strict equality, mandatory braces, irregular whitespace, unused variables and use-before-define. Formatting is deliberately absent — ESLint deprecated its layout rules and moved them to @stylistic, and they contradicted `@sebastienrousseau/prettier-config`. Pair this package with that one and the two compose without conflict.
 

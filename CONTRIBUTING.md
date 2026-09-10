@@ -5,17 +5,20 @@ Thank you for considering contributing to this repository!
 ## Development Workflow
 
 1. **Fork & Clone**:
+
    ```bash
    git clone https://github.com/sebastienrousseau/eslint-config.git
    cd eslint-config
    ```
 
-2. **Install Dependencies**:
+1. **Install Dependencies**:
+
    ```bash
    npm install
    ```
 
-3. **Run Validation Tests**:
+1. **Run Validation Tests**:
+
    ```bash
    npm test
    ```
@@ -23,6 +26,7 @@ Thank you for considering contributing to this repository!
 ## Commit Standards
 
 This repository enforces **Conventional Commits**:
+
 - `feat:` A new configuration feature
 - `fix:` A bug fix in rules or config options
 - `docs:` Documentation improvements
@@ -33,7 +37,7 @@ This repository enforces **Conventional Commits**:
 
 ## Pull Request Process
 
-1. Create a feature branch (`git checkout -b feat/my-improvement`).
-2. Ensure all validation tests pass (`npm test`).
-3. Push to your fork and submit a Pull Request targeting `main`.
-4. Resolve all review feedback.
+1.  Create a feature branch (`git checkout -b feat/my-improvement`).
+1.  Ensure all validation tests pass (`npm test`).
+1.  Push to your fork and submit a Pull Request targeting `main`.
+1.  Resolve all review feedback.

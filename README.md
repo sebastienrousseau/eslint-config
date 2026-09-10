@@ -24,23 +24,23 @@
 
 ## Contents
 
-**Getting started**
+### Getting started
 
 - [Install](#install) — npm, pnpm, yarn, bun, source
 - [Requirements](#requirements) — runtime floor, platform support
 - [Quick Start](#quick-start) — import and extend in seconds
 
-**The configuration ecosystem**
+### Ecosystem
 
 - [The configuration ecosystem](#the-configuration-ecosystem) — `@sebastienrousseau/config` family map at a glance
 
-**Configuration reference**
+### Configuration reference
 
 - [Why this approach?](#why-this-approach) — design rationale and engineering principles
 - [Modern ECMAScript & Code Hygiene Rules](#modern-ecmascript--code-hygiene-rules) — before and after rule comparison
 - [Module compatibility](#module-compatibility) — dual CJS/ESM exports and TypeScript declarations
 
-**Operational**
+### Operational
 
 - [When not to use this configuration](#when-not-to-use-this-configuration) — boundaries and limitations
 - [Development](#development) — make targets, validation, test suite
@@ -130,7 +130,44 @@ export default [
 
 | Configuration | Target / Purpose | Native Standard |
 | :--- | :--- | :--- |
-| [`@sebastienrousseau/biome-config`](https://github.com/sebastienrousseau/biome-config) | Rust-powered linting & formatting | Biome 1.9+ |\n| [`@sebastienrousseau/browserslist-config`](https://github.com/sebastienrousseau/browserslist-config) | Target browser matrix | Browserslist 4+ |\n| [`@sebastienrousseau/c-config`](https://github.com/sebastienrousseau/c-config) | Modern C23 clang-format and clang-tidy rules | Clang 18+ / C23 |\n| [`@sebastienrousseau/c8-config`](https://github.com/sebastienrousseau/c8-config) | V8 native code coverage thresholds | c8 / V8 |\n| [`@sebastienrousseau/commitlint-config`](https://github.com/sebastienrousseau/commitlint-config) | Conventional Commits standard | Commitlint 19+ |\n| [`@sebastienrousseau/cpp-config`](https://github.com/sebastienrousseau/cpp-config) | Modern C++23 clang-format, tidy & cmake rules | Clang 18+ / C++23 |\n| [`@sebastienrousseau/csharp-config`](https://github.com/sebastienrousseau/csharp-config) | C# Roslyn analyzers and OmniSharp rules | .NET 8/9 / Roslyn |\n| [`@sebastienrousseau/dart-config`](https://github.com/sebastienrousseau/dart-config) | Dart and Flutter analysis_options presets | Dart 3.x / Flutter |\n| [`@sebastienrousseau/docker-config`](https://github.com/sebastienrousseau/docker-config) | Multi-stage Docker hardening | Hadolint / BuildKit |\n| [`@sebastienrousseau/eslint-config`](https://github.com/sebastienrousseau/eslint-config) | Strict ECMAScript & TypeScript linting | ESLint 9+ Flat Config |\n| [`@sebastienrousseau/go-config`](https://github.com/sebastienrousseau/go-config) | Golangci-lint, staticcheck, and revive rules | Go 1.22+ / golangci-lint |\n| [`@sebastienrousseau/java-config`](https://github.com/sebastienrousseau/java-config) | Checkstyle, SpotBugs, and PMD rulesets | Java 21+ / Checkstyle |\n| [`@sebastienrousseau/jsdoc-config`](https://github.com/sebastienrousseau/jsdoc-config) | Structured API documentation generation | JSDoc 4+ |\n| [`@sebastienrousseau/knip-config`](https://github.com/sebastienrousseau/knip-config) | Unused files, exports & dependencies audit | Knip 5+ |\n| [`@sebastienrousseau/kotlin-config`](https://github.com/sebastienrousseau/kotlin-config) | Official ktlint formatting and Detekt analysis | Kotlin 2.0+ / Detekt |\n| [`@sebastienrousseau/lefthook-config`](https://github.com/sebastienrousseau/lefthook-config) | Fast, parallel Git hook automation | Lefthook 1.7+ |\n| [`@sebastienrousseau/lua-config`](https://github.com/sebastienrousseau/lua-config) | Lua 5.4, Neovim LuaCheck and StyLua presets | Lua 5.4 / StyLua |\n| [`@sebastienrousseau/markdownlint-config`](https://github.com/sebastienrousseau/markdownlint-config) | Markdown document style & structure | markdownlint-cli2 |\n| [`@sebastienrousseau/mocha-config`](https://github.com/sebastienrousseau/mocha-config) | BDD testing settings & reporting | Mocha 10+ |\n| [`@sebastienrousseau/oxlint-config`](https://github.com/sebastienrousseau/oxlint-config) | Sub-millisecond Rust JavaScript linting | Oxlint |\n| [`@sebastienrousseau/php-config`](https://github.com/sebastienrousseau/php-config) | PER-CS 2.0, PSR-12 and Level 8 PHPStan | PHP 8.3+ / PHPStan |\n| [`@sebastienrousseau/playwright-config`](https://github.com/sebastienrousseau/playwright-config) | Cross-browser end-to-end testing | Playwright 1.40+ |\n| [`@sebastienrousseau/prettier-config`](https://github.com/sebastienrousseau/prettier-config) | Deterministic code formatting | Prettier 3+ |\n| [`@sebastienrousseau/python-config`](https://github.com/sebastienrousseau/python-config) | Hardened Ruff, Black, Flake8, and MyPy rules | Python 3.12+ / Ruff |\n| [`@sebastienrousseau/r-config`](https://github.com/sebastienrousseau/r-config) | Lintr and styler presets for data science | R 4.3+ / lintr |\n| [`@sebastienrousseau/remark-config`](https://github.com/sebastienrousseau/remark-config) | AST-based markdown verification | Remark 13+ |\n| [`@sebastienrousseau/ruby-config`](https://github.com/sebastienrousseau/ruby-config) | RuboCop and StandardRB rules for Ruby 3.3+ | Ruby 3.3+ / RuboCop |\n| [`@sebastienrousseau/rust-config`](https://github.com/sebastienrousseau/rust-config) | Hardened rustfmt formatting and Clippy lints | Rust 2021 / Clippy |\n| [`@sebastienrousseau/semantic-release-config`](https://github.com/sebastienrousseau/semantic-release-config) | Tag-driven automated releases & changelogs | semantic-release 24+ |\n| [`@sebastienrousseau/shell-config`](https://github.com/sebastienrousseau/shell-config) | Strict ShellCheck static analysis & shfmt presets | POSIX / Bash / ShellCheck |\n| [`@sebastienrousseau/size-limit-config`](https://github.com/sebastienrousseau/size-limit-config) | Performance bundle budget enforcement | Size Limit 11+ |\n| [`@sebastienrousseau/sql-config`](https://github.com/sebastienrousseau/sql-config) | Dialect-aware SQLFluff linting & formatting | SQLFluff / ANSI SQL |\n| [`@sebastienrousseau/stylelint-config`](https://github.com/sebastienrousseau/stylelint-config) | Modern CSS & SCSS quality assurance | Stylelint 16+ |\n| [`@sebastienrousseau/swift-config`](https://github.com/sebastienrousseau/swift-config) | Strict SwiftLint rules & SwiftFormat presets | Swift 5.10 / SwiftLint |\n| [`@sebastienrousseau/tailwindcss-config`](https://github.com/sebastienrousseau/tailwindcss-config) | Utility-first design tokens & typography | Tailwind CSS 4+ |\n| [`@sebastienrousseau/tsconfig-config`](https://github.com/sebastienrousseau/tsconfig-config) | Strict type checking & modern module resolution | TypeScript 5+ |\n| [`@sebastienrousseau/vitest-config`](https://github.com/sebastienrousseau/vitest-config) | Lightning-fast Vite-native unit testing | Vitest 2+ |\n| [`@sebastienrousseau/zig-config`](https://github.com/sebastienrousseau/zig-config) | Hardened ZLS and build formatting rules | Zig 0.13+ / ZLS |
+| [`@sebastienrousseau/biome-config`](https://github.com/sebastienrousseau/biome-config) | Rust-powered linting & formatting | Biome 1.9+ |
+| [`@sebastienrousseau/browserslist-config`](https://github.com/sebastienrousseau/browserslist-config) | Target browser matrix | Browserslist 4+ |
+| [`@sebastienrousseau/c-config`](https://github.com/sebastienrousseau/c-config) | Modern C23 clang-format and clang-tidy rules | Clang 18+ / C23 |
+| [`@sebastienrousseau/c8-config`](https://github.com/sebastienrousseau/c8-config) | V8 native code coverage thresholds | c8 / V8 |
+| [`@sebastienrousseau/commitlint-config`](https://github.com/sebastienrousseau/commitlint-config) | Conventional Commits standard | Commitlint 19+ |
+| [`@sebastienrousseau/cpp-config`](https://github.com/sebastienrousseau/cpp-config) | Modern C++23 clang-format, tidy & cmake rules | Clang 18+ / C++23 |
+| [`@sebastienrousseau/csharp-config`](https://github.com/sebastienrousseau/csharp-config) | C# Roslyn analyzers and OmniSharp rules | .NET 8/9 / Roslyn |
+| [`@sebastienrousseau/dart-config`](https://github.com/sebastienrousseau/dart-config) | Dart and Flutter analysis_options presets | Dart 3.x / Flutter |
+| [`@sebastienrousseau/docker-config`](https://github.com/sebastienrousseau/docker-config) | Multi-stage Docker hardening | Hadolint / BuildKit |
+| [`@sebastienrousseau/eslint-config`](https://github.com/sebastienrousseau/eslint-config) | Strict ECMAScript & TypeScript linting | ESLint 9+ Flat Config |
+| [`@sebastienrousseau/go-config`](https://github.com/sebastienrousseau/go-config) | Golangci-lint, staticcheck, and revive rules | Go 1.22+ / golangci-lint |
+| [`@sebastienrousseau/java-config`](https://github.com/sebastienrousseau/java-config) | Checkstyle, SpotBugs, and PMD rulesets | Java 21+ / Checkstyle |
+| [`@sebastienrousseau/jsdoc-config`](https://github.com/sebastienrousseau/jsdoc-config) | Structured API documentation generation | JSDoc 4+ |
+| [`@sebastienrousseau/knip-config`](https://github.com/sebastienrousseau/knip-config) | Unused files, exports & dependencies audit | Knip 5+ |
+| [`@sebastienrousseau/kotlin-config`](https://github.com/sebastienrousseau/kotlin-config) | Official ktlint formatting and Detekt analysis | Kotlin 2.0+ / Detekt |
+| [`@sebastienrousseau/lefthook-config`](https://github.com/sebastienrousseau/lefthook-config) | Fast, parallel Git hook automation | Lefthook 1.7+ |
+| [`@sebastienrousseau/lua-config`](https://github.com/sebastienrousseau/lua-config) | Lua 5.4, Neovim LuaCheck and StyLua presets | Lua 5.4 / StyLua |
+| [`@sebastienrousseau/markdownlint-config`](https://github.com/sebastienrousseau/markdownlint-config) | Markdown document style & structure | markdownlint-cli2 |
+| [`@sebastienrousseau/mocha-config`](https://github.com/sebastienrousseau/mocha-config) | BDD testing settings & reporting | Mocha 10+ |
+| [`@sebastienrousseau/oxlint-config`](https://github.com/sebastienrousseau/oxlint-config) | Sub-millisecond Rust JavaScript linting | Oxlint |
+| [`@sebastienrousseau/php-config`](https://github.com/sebastienrousseau/php-config) | PER-CS 2.0, PSR-12 and Level 8 PHPStan | PHP 8.3+ / PHPStan |
+| [`@sebastienrousseau/playwright-config`](https://github.com/sebastienrousseau/playwright-config) | Cross-browser end-to-end testing | Playwright 1.40+ |
+| [`@sebastienrousseau/prettier-config`](https://github.com/sebastienrousseau/prettier-config) | Deterministic code formatting | Prettier 3+ |
+| [`@sebastienrousseau/python-config`](https://github.com/sebastienrousseau/python-config) | Hardened Ruff, Black, Flake8, and MyPy rules | Python 3.12+ / Ruff |
+| [`@sebastienrousseau/r-config`](https://github.com/sebastienrousseau/r-config) | Lintr and styler presets for data science | R 4.3+ / lintr |
+| [`@sebastienrousseau/remark-config`](https://github.com/sebastienrousseau/remark-config) | AST-based markdown verification | Remark 13+ |
+| [`@sebastienrousseau/ruby-config`](https://github.com/sebastienrousseau/ruby-config) | RuboCop and StandardRB rules for Ruby 3.3+ | Ruby 3.3+ / RuboCop |
+| [`@sebastienrousseau/rust-config`](https://github.com/sebastienrousseau/rust-config) | Hardened rustfmt formatting and Clippy lints | Rust 2021 / Clippy |
+| [`@sebastienrousseau/semantic-release-config`](https://github.com/sebastienrousseau/semantic-release-config) | Tag-driven automated releases & changelogs | semantic-release 24+ |
+| [`@sebastienrousseau/shell-config`](https://github.com/sebastienrousseau/shell-config) | Strict ShellCheck static analysis & shfmt presets | POSIX / Bash / ShellCheck |
+| [`@sebastienrousseau/size-limit-config`](https://github.com/sebastienrousseau/size-limit-config) | Performance bundle budget enforcement | Size Limit 11+ |
+| [`@sebastienrousseau/sql-config`](https://github.com/sebastienrousseau/sql-config) | Dialect-aware SQLFluff linting & formatting | SQLFluff / ANSI SQL |
+| [`@sebastienrousseau/stylelint-config`](https://github.com/sebastienrousseau/stylelint-config) | Modern CSS & SCSS quality assurance | Stylelint 16+ |
+| [`@sebastienrousseau/swift-config`](https://github.com/sebastienrousseau/swift-config) | Strict SwiftLint rules & SwiftFormat presets | Swift 5.10 / SwiftLint |
+| [`@sebastienrousseau/tailwindcss-config`](https://github.com/sebastienrousseau/tailwindcss-config) | Utility-first design tokens & typography | Tailwind CSS 4+ |
+| [`@sebastienrousseau/tsconfig-config`](https://github.com/sebastienrousseau/tsconfig-config) | Strict type checking & modern module resolution | TypeScript 5+ |
+| [`@sebastienrousseau/vitest-config`](https://github.com/sebastienrousseau/vitest-config) | Lightning-fast Vite-native unit testing | Vitest 2+ |
+| [`@sebastienrousseau/zig-config`](https://github.com/sebastienrousseau/zig-config) | Hardened ZLS and build formatting rules | Zig 0.13+ / ZLS |
 
 To adopt the complete suite with a single import, install the master meta-package:
 
@@ -146,9 +183,9 @@ Configuration rot is one of the most common vectors for project decay. Ad-hoc to
 
 `@sebastienrousseau/eslint-config` solves this with three deliberate engineering choices:
 
-1. **Zero Runtime Dependencies**: The configuration contains only static, serialisable declarative definitions and clean programmatic adapters.
-2. **Dual CJS/ESM Architecture**: Ships dedicated CommonJS (`index.cjs`) and ES Module (`index.mjs`) entrypoints alongside comprehensive TypeScript declarations (`index.d.ts`).
-3. **Deterministic Governance**: Versioned strictly by `+0.0.1` per release, cryptographically signed with published PGP keys, and audited continuously.
+1.  **Zero Runtime Dependencies**: The configuration contains only static, serialisable declarative definitions and clean programmatic adapters.
+1.  **Dual CJS/ESM Architecture**: Ships dedicated CommonJS (`index.cjs`) and ES Module (`index.mjs`) entrypoints alongside comprehensive TypeScript declarations (`index.d.ts`).
+1.  **Deterministic Governance**: Versioned strictly by `+0.0.1` per release, cryptographically signed with published PGP keys, and audited continuously.
 
 ---
 
@@ -221,14 +258,16 @@ make test
 
 ## Security
 
-- **Private Reporting**: Report security vulnerabilities by emailing **sebastian.rousseau@gmail.com**. Expect an initial response within 48 hours and a mitigation plan within 7 days.
+- **Private Reporting**: Report security vulnerabilities by emailing **<sebastian.rousseau@gmail.com>**. Expect an initial response within 48 hours and a mitigation plan within 7 days.
 - **Commit Integrity**: All commits on `main` and release tags are cryptographically signed.
-- **Release Signing Key**: The release-signing PGP key is published in [`KEYS.asc`](KEYS.asc):
-  ```text
-  4B7F16C909C7A8EE9BED338A4F047EDF5F90F638
-  ```
-  Signing key `Sebastien Rousseau <sebastian.rousseau@gmail.com>`, ed25519, expires 2028-08-16.
+- **Release Signing Key**: The release-signing PGP key is published in [`KEYS.asc`](KEYS.asc).
 - **Supply Chain**: Monitored continuously via Dependabot, CodeQL, and SLSA provenance. See [`SECURITY.md`](SECURITY.md) for details.
+
+```text
+4B7F16C909C7A8EE9BED338A4F047EDF5F90F638
+```
+
+Signing key `Sebastien Rousseau <sebastian.rousseau@gmail.com>`, ed25519, expires 2028-08-16.
 
 ---
 
@@ -254,8 +293,8 @@ make test
 
 The minimum supported Node.js version is **20.0.0**. The floor may raise only when:
 
-1. An upstream LTS version reaches official End-of-Life (EOL).
-2. The reason is explicitly recorded in `CHANGELOG.md` and `DEVELOPMENT.md`.
+1.  An upstream LTS version reaches official End-of-Life (EOL).
+1.  The reason is explicitly recorded in `CHANGELOG.md` and `DEVELOPMENT.md`.
 
 ---
 

@@ -5,10 +5,12 @@ How to migrate from ad-hoc or legacy tooling configurations to `@sebastienrousse
 ## Upgrading from Previous Versions
 
 1. Update package version:
+
    ```bash
    npm install --save-dev @sebastienrousseau/eslint-config@latest
    ```
-2. Verify module resolution with `npm test`.
+
+1. Verify module resolution with `npm test`.
 
 ## Migrating from Bespoke Configurations
 

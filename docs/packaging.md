@@ -14,11 +14,11 @@ so the grant is machine-readable without parsing prose.
 
 ## What the package contains
 
-- `index.cjs` — the configuration, defined once
-- `index.mjs` — an ESM re-export of `index.cjs`, so both module systems return
+-  `index.cjs` — the configuration, defined once
+-  `index.mjs` — an ESM re-export of `index.cjs`, so both module systems return
   the identical value
-- `index.js` — legacy `main` entrypoint, an alias of `index.cjs`
-- `index.d.ts` — the TypeScript declaration, asserted against the runtime shape in CI
+-  `index.js` — legacy `main` entrypoint, an alias of `index.cjs`
+-  `index.d.ts` — the TypeScript declaration, asserted against the runtime shape in CI
 
 The published tarball is an allowlist (`files` in `package.json`), verified in CI
 against `npm pack`: every exported path and every preset must be present, and no
