@@ -15,7 +15,7 @@ permissions:
 jobs:
   ci:
     name: Conformance
-    uses: sebastienrousseau/config/.github/workflows/reusable-ci.yml@main
+    uses: sebastienrousseau/config/.github/workflows/reusable-ci.yml@033324fc70d73f811f89bce66656a70eab1630f7 # main
     with:
       node-versions: '["20","22","24"]'
       os: '["ubuntu-latest","macos-latest","windows-latest"]'
