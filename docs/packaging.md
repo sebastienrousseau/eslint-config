@@ -61,7 +61,65 @@ tarball to the workflow run that built it). Verify with:
 npm audit signatures
 ```
 
-Git tags are signed; the public key is [KEYS.asc](../KEYS.asc).
+Commits are signed. **Release tags are not yet signed** — the 0.0.7 tags are
+lightweight tags created by the release tooling, so `git tag -v` will tell you
+there is nothing to verify. Signed annotated tags begin at 0.0.8; until then,
+verify the published artefact with `npm audit signatures` above rather than the
+tag. The signing key is [KEYS.asc](../KEYS.asc).
+
+## Distribution packaging
+
+Ready-to-use sources live in [`pkg/`](../pkg), one directory per format:
+
+| Format | Path | Installs to |
+| :----- | :--- | :---------- |
+| Debian | [`pkg/deb/`](../pkg/deb) | `/usr/share/nodejs/@sebastienrousseau/eslint-config/` |
+| RPM | [`pkg/rpm/`](../pkg/rpm) | `/usr/lib/node_modules/@sebastienrousseau/eslint-config/` |
+| Arch | [`pkg/aur/PKGBUILD`](../pkg/aur/PKGBUILD) | `/usr/lib/node_modules/@sebastienrousseau/eslint-config/` |
+| Homebrew | [`pkg/brew/eslint-config.rb`](../pkg/brew/eslint-config.rb) | formula cellar |
+| Nix | [`pkg/nix/flake.nix`](../pkg/nix/flake.nix) | `$out/lib/node_modules/@sebastienrousseau/eslint-config/` |
+
+Both Linux paths are the ones the respective distribution's `nodejs` package
+adds to the module search path, so an installed package is resolvable by
+`require()` with no further wiring. CI builds the deb and the rpm on every
+push and asserts the files land where this table says.
+
+To build the Debian package, copy `pkg/deb` to `debian/` at the repository
+root and run `dpkg-buildpackage -us -uc -b`.
+
+### A note on module resolution
+
+`NODE_PATH` is a CommonJS-only mechanism — Node's ESM resolver ignores it. The
+installed package is reachable by `require()` through
+`NODE_PATH=/usr/share/nodejs`, but **not** by `import` the same way. Expose it
+as a project would, by symlinking into the consuming project's
+`node_modules`, which works for both module systems:
+
+```sh
+mkdir -p node_modules/@sebastienrousseau
+ln -s /usr/share/nodejs/@sebastienrousseau/<name> node_modules/@sebastienrousseau/<name>
+```
+
+CI installs the built package and loads it both ways, so this is tested rather
+than assumed.
+
+## Reproducible builds
+
+`npm pack` is byte-for-byte reproducible for this package: two runs from the
+same tree produce tarballs with identical SHA-256 sums. CI packs twice and
+compares on every push, so the claim is a gate rather than an assertion.
+
+This is not a statement about the distribution packages, which inherit their
+respective toolchains' reproducibility.
+
+## Decisions taken deliberately
+
+Three things the packaging checklist asks for are **intentionally absent**, and
+the reasoning is recorded here rather than left as an unexplained gap:
+
+- **No container image.** The package is inert configuration consumed at build time by a tool running on the host. A container would ship a filesystem nobody executes.
+- **No C-FFI surface.** There is no callable API — the package exports a data object. A cdylib would export nothing meaningful.
+- **No Repology badge yet.** Repology tracks a project once distributions do. The badge goes in the README when at least two distributions carry the package, not before; a badge for nothing is noise.
 
 ## Security contact
 

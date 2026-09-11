@@ -1,0 +1,26 @@
+# Maintainer: Sebastien Rousseau <sebastian.rousseau@gmail.com>
+pkgname=nodejs-sebastienrousseau-eslint-config
+pkgver=0.0.7
+pkgrel=1
+pkgdesc="Shareable ESLint configuration adhering to modern JS/TS and 2026 standards"
+arch=('any')
+url="https://github.com/sebastienrousseau/eslint-config"
+license=('Apache-2.0' 'MIT')
+depends=('nodejs>=20')
+makedepends=('npm')
+source=("https://registry.npmjs.org/@sebastienrousseau/eslint-config/-/eslint-config-${pkgver}.tgz")
+# Filled in by `updpkgsums` against the published tarball; the npm registry
+# tarball for a given version is immutable, so the sum is stable.
+sha256sums=('SKIP')
+
+package() {
+  npm install -g --prefix "${pkgdir}/usr" "${srcdir}/eslint-config-${pkgver}.tgz"
+
+  # npm records the build path in these; strip them so the package is
+  # reproducible and does not leak $srcdir.
+  find "${pkgdir}/usr" -name '.package-lock.json' -delete
+  chmod -R u=rwX,go=rX "${pkgdir}"
+
+  install -Dm644 "${pkgdir}/usr/lib/node_modules/@sebastienrousseau/eslint-config/LICENSE" \
+    "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
