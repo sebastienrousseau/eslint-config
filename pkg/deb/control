@@ -1,0 +1,18 @@
+Source: node-sebastienrousseau-eslint-config
+Section: javascript
+Priority: optional
+Maintainer: Sebastien Rousseau <sebastian.rousseau@gmail.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.0
+Homepage: https://github.com/sebastienrousseau/eslint-config
+Rules-Requires-Root: no
+
+Package: node-sebastienrousseau-eslint-config
+Architecture: all
+Depends: ${misc:Depends}, nodejs (>= 20)
+Description: Shareable ESLint configuration adhering to modern JS/TS and 2026 standards
+ @sebastienrousseau/eslint-config is a shareable configuration preset with no runtime
+ dependencies: inert data plus a loader.
+ .
+ Installed under /usr/share/nodejs so that require() resolves it without
+ further configuration.

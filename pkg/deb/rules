@@ -1,0 +1,7 @@
+#!/usr/bin/make -f
+# The package is architecture-independent data; there is nothing to compile.
+%:
+	dh $@
+
+override_dh_auto_build:
+override_dh_auto_test:
