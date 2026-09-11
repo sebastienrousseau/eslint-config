@@ -43,7 +43,7 @@ headline: "MCP Server"
 lead: "A window onto the clones already on disk. In its default mode it makes no network calls and never contacts the GitHub API."
 cur_install: ""
 cur_usage: ""
-cur_mcp: ' aria-current="page"'
+cur_mcp: ""
 cur_ref: ""
 toc_1: "What it is"
 toc_1_id: "what-it-is"
@@ -56,6 +56,7 @@ prev_label: "Usage"
 next_href: "/reference/"
 next_label: "Reference"
 layout: "doc"
+openssf_id: "14524"
 ---
 
 ## What it is
