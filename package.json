@@ -60,7 +60,7 @@
   },
   "devDependencies": {
     "@sebastienrousseau/config-kit": "^0.0.8",
-    "eslint": "10.10.0"
+    "eslint": "10.12.0"
   },
   "engines": {
     "node": ">=20.0.0"
