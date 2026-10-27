@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Security
+
+- `package-lock.json` moves brace-expansion 5.0.9 to 5.0.12
+  (GHSA-q2hr-2g5m-vwhr, GHSA-qhr7-859c-m2p7, GHSA-6j4f-fj2g-mc7p), which
+  the Security Analysis advisory gate fails on.
+
 ## [0.0.7] - 2026-09-10
 
 ### Added
