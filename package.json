@@ -72,6 +72,6 @@
     "validate": "eslint-flat"
   },
   "overrides": {
-    "minimatch@<11.0.1": ">=11.0.1 <12.0.0"
+    "minimatch": "^11.0.1"
   }
 }
