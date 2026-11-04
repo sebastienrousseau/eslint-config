@@ -17,7 +17,7 @@ permissions:
 jobs:
   security:
     name: Supply chain
-    uses: sebastienrousseau/config/.github/workflows/reusable-security.yml@097fb1a947e0821d19cfe2124c634a6ee3106f0a # main (config #39, audit exceptions)
+    uses: sebastienrousseau/config/.github/workflows/reusable-security.yml@bf63d1689967a0bf169ce9ac40fefc22d4929181 # main (config #39, audit exceptions)
     permissions:
       contents: read
       security-events: write
