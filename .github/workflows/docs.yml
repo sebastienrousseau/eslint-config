@@ -18,7 +18,7 @@ permissions:
 jobs:
   docs:
     name: Build and deploy
-    uses: sebastienrousseau/config/.github/workflows/reusable-docs.yml@bf63d1689967a0bf169ce9ac40fefc22d4929181 # main
+    uses: sebastienrousseau/config/.github/workflows/reusable-docs.yml@f62f4df4bdc67b10d86c7c0e00c8515d40345d46 # main
     permissions:
       contents: read
       pages: write
