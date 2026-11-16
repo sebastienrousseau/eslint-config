@@ -3,7 +3,7 @@
 %global sitelib       %{_prefix}/lib/node_modules
 
 Name:           nodejs-sebastienrousseau-eslint-config
-Version:        0.0.7
+Version:        0.0.9
 Release:        1%{?dist}
 Summary:        Shareable ESLint configuration adhering to modern JS/TS and 2026 standards
 
@@ -40,5 +40,8 @@ install -pm 0644 package.json %{buildroot}%{sitelib}/%{npm_scope}/%{npm_bare}/
 %{sitelib}/%{npm_scope}/%{npm_bare}/
 
 %changelog
+* Mon Nov 16 2026 Sebastien Rousseau <sebastian.rousseau@gmail.com> - 0.0.9-1
+- Release 0.0.9.
+
 * Fri Sep 11 2026 Sebastien Rousseau <sebastian.rousseau@gmail.com> - 0.0.7-1
 - Initial packaging.
