@@ -6,7 +6,7 @@
 class EslintConfig < Formula
   desc "Shareable ESLint configuration adhering to modern JS/TS and 2026 standards"
   homepage "https://github.com/sebastienrousseau/eslint-config"
-  url "https://registry.npmjs.org/@sebastienrousseau/eslint-config/-/eslint-config-0.0.7.tgz"
+  url "https://registry.npmjs.org/@sebastienrousseau/eslint-config/-/eslint-config-0.0.9.tgz"
   license any_of: ["Apache-2.0", "MIT"]
 
   depends_on "node"
