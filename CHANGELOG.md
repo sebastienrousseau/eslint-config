@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.9] - 2026-11-16
+
+### Changed
+
+- Synchronize version to 0.0.9 across the config family and merge dependency updates.
+
 ### Security
 
 - `package-lock.json` moves brace-expansion 5.0.9 to 5.0.12
